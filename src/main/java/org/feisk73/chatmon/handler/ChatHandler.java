@@ -21,14 +21,14 @@ public class ChatHandler {
             plugin.getServer().broadcastMessage(ChatUtil.formatChat(
                     ConfigUtil.getString("scope-label.global", "§6G"),
                     sender,
-                    message)
+                    message.substring(1))
             );
             return;
         }
         // Лакал чат
         Player[] nearbyPlayers = PlayerScanner.getPlayersNearby(sender.getPosition(), ConfigUtil.getInt("radius", 100));
         if (nearbyPlayers.length == 0 ) {
-            sender.sendChat(ConfigUtil.getString("message.no-one-around", "§7Ваше сообщение никто не услышал. Попробуйте написать \"!\" перед своим сообщением"));
+            sender.sendChat(ConfigUtil.getString("messages.no-one-around", "§7Ваше сообщение никто не услышал. Попробуйте написать \"!\" перед своим сообщением"));
         }
         // каждаму играку собщения кидаем
         for (Player player : nearbyPlayers) {
