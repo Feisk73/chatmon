@@ -1,0 +1,17 @@
+name: chatmon
+main: org.feisk73.chatmon.Main
+version: "1.0.0"
+api: ["1.0.0"]
+
+author: Feisk73
+description: Chat manager.
+depend: [ "PlaceholderAPI" ]
+commands:
+  chatmonreload:
+    description: "Reload chatmon config"
+    usage: "/chatmonreload"
+    permission: chatmon.command.reload
+permissions:
+  chatmon.command.reload:
+    description: "Перезагрузка конфига"
+    default: op
