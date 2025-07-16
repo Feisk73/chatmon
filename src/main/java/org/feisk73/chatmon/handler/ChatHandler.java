@@ -27,9 +27,6 @@ public class ChatHandler {
         }
         // Лакал чат
         Player[] nearbyPlayers = PlayerScanner.getPlayersNearby(sender.getPosition(), ConfigUtil.getInt("radius", 100));
-        if (nearbyPlayers.length == 0 ) {
-            sender.sendChat(ConfigUtil.getString("messages.no-one-around", "§7Ваше сообщение никто не услышал. Попробуйте написать \"!\" перед своим сообщением"));
-        }
         // каждаму играку собщения кидаем
         for (Player player : nearbyPlayers) {
             player.sendChat(ChatUtil.formatChat(
@@ -37,6 +34,9 @@ public class ChatHandler {
                     sender,
                     message)
             );
+        }
+        if (nearbyPlayers.length == 1 ) {
+            sender.sendChat(ConfigUtil.getString("messages.no-one-around", "§7Ваше сообщение никто не услышал. Попробуйте написать \"!\" перед своим сообщением"));
         }
     }
     private boolean isGlobalChat() {
