@@ -1,0 +1,17 @@
+# placeholders:
+#   %chat_type% – Indicates whether the message was sent to a local or global chat.
+#   %name% - Player's display name.
+#   %msg% - Player's message.
+
+chat-format: "%chat_type% | %luckperms_prefix% <%name%> %msg%"
+
+scope-label:
+  local: "§aL"
+  global: "§6G"
+
+radius: 100
+
+globalChatPrefix: "!"
+
+messages:
+  no-one-around: "§7Ваше сообщение никто не услышал. Попробуйте написать \"!\" перед своим сообщением"
