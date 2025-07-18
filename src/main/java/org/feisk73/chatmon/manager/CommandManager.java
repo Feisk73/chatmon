@@ -11,6 +11,6 @@ public class CommandManager {
     }
 
     public void registerCommands() {
-        plugin.getServer().getCommandMap().register("chatmonreload", new ReloadCommand());
+        plugin.getServer().getCommandMap().register("chatmonreload", new ReloadCommand(plugin));
     }
 }

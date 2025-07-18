@@ -3,12 +3,13 @@ package org.feisk73.chatmon.commands;
 import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.utils.TextFormat;
-import org.feisk73.chatmon.util.ConfigUtil;
+import org.feisk73.chatmon.Main;
 
 public class ReloadCommand extends Command {
-
-    public ReloadCommand() {
+    private final Main plugin;
+    public ReloadCommand(Main plugin) {
         super("chatmonreload", "Reload chatmon config", "/chatmon");
+        this.plugin = plugin;
     }
 
     @Override
@@ -17,7 +18,7 @@ public class ReloadCommand extends Command {
             sender.sendMessage(TextFormat.RED + "У вас недостаточно прав на использование данной команды");
             return true;
         }
-        ConfigUtil.reload();
+        plugin.getConfigManager().reload();
         sender.sendMessage("[Chatmon] Конфиг был перезагружен");
         return true;
     }

@@ -9,11 +9,14 @@ public class ProjectManager {
     private CommandManager commandManager;
     @Getter
     private EventManager eventManager;
+    @Getter
+    private ConfigManager configManager;
 
     public ProjectManager(Main plugin) {
         this.plugin = plugin;
     }
     public void init() {
+        configManager = new ConfigManager(plugin.getConfig());
         commandManager = new CommandManager(plugin);
         eventManager = new EventManager(plugin);
     }
